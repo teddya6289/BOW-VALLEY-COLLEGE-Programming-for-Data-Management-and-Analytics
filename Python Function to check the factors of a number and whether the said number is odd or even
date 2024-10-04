@@ -1,0 +1,41 @@
+# PIVOT-ED ASSESSMENT PART2-UNIT1(BO VALLEY COLLEGE)
+
+#Q1-Q2 Checking if a number is either even or odd with the Check_odd_even function below
+def Check_odd_even(x):
+  if (x % 2) == 0:
+    print(f'{x} is an even number')
+  else:                               #Q2 Checking for odd number with the else statement
+    print(f'{x} is an odd number')
+  return x
+
+#Q3-Q5 Finding the factors of a number with the below get_factors function
+def get_factors(x ):
+    factor_variable=[]
+    iteration_index = 1
+    while iteration_index <= x:
+     if (x % iteration_index) == 0:
+      factor_variable.append(iteration_index)
+     iteration_index += 1
+    print(f'The factors of {x} are:{factor_variable}')
+    return factor_variable
+    
+
+#Q6-Q7 Checking if a number is Prime using the lenght of the  factors of the number(x) = 2
+'''NOTICE, WE CALLED THE GET_FACTORS FUNCTION USING THE RETURN STATEMENT 
+   TO GET ACCESS TO THE FACTORS VARAIBLE OF THE NUMBER(X)'''
+
+def Check_prime(x):
+  a=get_factors(x)
+  if len(a) == 2:
+    print(f'{x} is a prime number')
+  else:
+    print(f'{x} is not a prime number')
+
+'''Q8-Q9 Created a function Analyze_number to call all our previous functions as a single block/entity
+         so that we do not have to call each function individually, but rather call all functions as a single
+         block.'''
+def Analyze_number(x):
+    funct2= Check_odd_even(x)
+    factor= get_factors(x)
+    funct= Check_prime(x)
+    print(f'Function number:{funct2} factors of number:{factor},sum of factors = {sum(factor)}')
